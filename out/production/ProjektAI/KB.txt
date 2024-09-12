@@ -1,0 +1,13 @@
+12
+country: ESP
+cost: 1500
+pool:
+kids:
+suite:
+#
+country: ESP
+cost: 1500
+pool:
+kids:
+suite:
+#
