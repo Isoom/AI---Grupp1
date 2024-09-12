@@ -1,3 +1,13 @@
-ESP # namn # kostnad/natt # pool # barn # lyxsvit
-ESP # namn # kostnad/natt # pool # barn # lyxsvit
-
+12
+country: ESP
+cost: 1500
+pool:
+kids:
+suite:
+#
+country: ESP
+cost: 1500
+pool:
+kids:
+suite:
+#
