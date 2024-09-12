@@ -3,20 +3,33 @@ import java.util.ArrayList;
 public class Hotel {
 
     private String name;
-    private Integer cost;
-    private boolean poolExist;
-    private boolean childOK;
-    private boolean suiteExist;
+    int cost;
+    int index;
+    String country;
+    boolean kidsAllowed;
+    boolean poolExist;
+    boolean suiteExist;
+
     private ArrayList<String> hotelInfo = new ArrayList<>();
 
-    public Hotel(String name) {
+    public Hotel(int index, String name, String country, int cost, boolean poolExist, boolean kidsAllowed, boolean suiteExist) {
+        this.index = index;
         this.name = name;
-        //this.hotelInfo = arrayList;
+        this.cost = cost;
+        this.country = country;
+        this.kidsAllowed = kidsAllowed;
+        this.poolExist = poolExist;
+        this.suiteExist = suiteExist;
     }
 
-    public void setPoolStatusTrue(boolean bool) {
-        poolExist = true;
+    public String getHotelName() {
+        return this.name;
     }
+    public String getHotelCountry() {
+        return this.country;
+    }
+
+
 
 }
 

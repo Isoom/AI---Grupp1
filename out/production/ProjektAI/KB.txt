@@ -1,13 +1,15 @@
-12
+2
+name: CostaDelSol
 country: ESP
 cost: 1500
-pool:
-kids:
-suite:
+pool: true
+kids: true
+suite: true
 #
-country: ESP
+name: LaPerlé
+country: FRA
 cost: 1500
-pool:
-kids:
-suite:
+pool: true
+kids: true
+suite: false
 #
