@@ -1,8 +1,4 @@
-
-
-
-
-if (attribute1.isEqual(FR)){
-
-
+class Main {
+    public static void main(String[] args) {
+    }
 }
