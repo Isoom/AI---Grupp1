@@ -14,6 +14,7 @@ public class Hotel {
     /**
      * Constructs a new Hotel instance with the specified attributes.
      *
+     *
      * @param index The index or ID of the hotel.
      * @param name The name of the hotel.
      * @param country The country where the hotel is located.
