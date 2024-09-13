@@ -2,11 +2,15 @@ import java.lang.module.FindException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+/**
+ * Reads hotel information from a knowledge base (KB) and manages the data.
+ */
 public class Program {
+    // List of untouched data from the KB
     private ArrayList<String> KBdata = new ArrayList<>();
-    private int amountOfHotels; //how many hotels base of KB
-    private int amountOfAttributes = 5; //how many attributes the kB has
-    private int KBLenght;
+    private int amountOfHotels;
+    private int amountOfAttributes = 5; // no. of attribute
+    private int KBLenght; // Length of KB
 
     private ArrayList<String> countryList = new ArrayList<>();
     private ArrayList<String> hotelNameList = new ArrayList<>();
@@ -15,14 +19,17 @@ public class Program {
     private ArrayList<String> kidsAllowedList = new ArrayList<>();
     private ArrayList<String> suitExistList = new ArrayList<>();
 
-
-
     //Ett förlsag för att göra koden snyggare, är att man tänker som med OU4 graf.
     // ALltenrativet är att attributen är som flygplatserna, deras grannar är deras attribut.
     // SÅ om man kollar efter ett hotell i spanien, har spanien 4 grannar. Utifrån vad användaren ber om får den gå igenom varje hotell och se så alla sttribut stämmer.
     // OM man orkar.
 
-
+    /**
+     * Constructor that initializes the program by reading hotel data from a Scanner.
+     *
+     * @param KBscanner A scanner object that reads from the knowledge base.
+     * @throws Exception If there is an issue while reading the knowledge base.
+     */
     public Program(java.util.Scanner KBscanner) throws Exception {
         amountOfHotels = KBscanner.nextInt();
         System.out.println("Amount of hotels in KB: "+amountOfHotels); //print how many hotels we have (based from KB)
@@ -61,17 +68,39 @@ public class Program {
         }
     }
 
+    /**
+     * Converts a string to an integer.
+     *
+     * @param string The string to convert.
+     * @return The integer value of the string.
+     */
     private int StringToInt(String string) {
         return Integer.parseInt(string);
     }
+
+    /**
+     * Converts a string to a boolean.
+     *
+     * @param string The string to convert.
+     * @return The boolean value of the string.
+     */
     private boolean StringToBoolean(String string) {
         return Boolean.parseBoolean(string);
     }
 
+    /**
+     * Extracts the last word from a string using substring method.
+     *
+     * @param input The input string.
+     * @return The last word of the string.
+     */
     public String getLastWordUsingSubString(String input) {
         return input.substring(input.lastIndexOf(" ") + 1);
     }
 
+    /**
+     * Displays all hotel information stored in the knowledge base.
+     */
     public void displayKBInfo() {
         for (int i = 0; i < amountOfHotels; i++) {
             System.out.println(
@@ -80,9 +109,11 @@ public class Program {
             );
 
         }
-
     }
 
+    /**
+     * Creates Hotel objects from the knowledge base and displays hotel information.
+     */
     public void sumDisplayHotel() {
         for (int i = 0; i < amountOfHotels; i++) {
             String hotelName = hotelNameList.get(i);
@@ -92,12 +123,9 @@ public class Program {
             boolean kidsAllowed = StringToBoolean(kidsAllowedList.get(i));
             boolean suiteExist = StringToBoolean(suitExistList.get(i));
 
-            //en funktion som inte ska finnas hr nu, men för att man ska se.
+            // Create Hotel object and display its name
             Hotel hotel = new Hotel(i, hotelName, hotelCountry, hotelCost, poolAllowed,kidsAllowed, suiteExist);
             System.out.println(hotel + " name is:  "+ hotel.getHotelName());
         }
     }
-
-
-
 }
